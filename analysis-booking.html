@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حجز موعد تحليل | مركز الأفق الطبي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00a8cc;
+            --secondary-color: #0088a8;
+            --dark-color: #2c3e50;
+            --light-color: #f8f9fa;
+            --font-arabic: 'Cairo', sans-serif;
+            --font-english: 'Poppins', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-arabic);
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+        }
+
+        .booking-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .booking-header {
+            background: linear-gradient(135deg, #00a8cc 0%, #0088a8 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .booking-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .booking-header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .booking-header .logo i {
+            font-size: 28px;
+        }
+
+        .back-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: var(--font-arabic);
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main Content */
+        .booking-main {
+            flex: 1;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Analysis Info Card */
+        .analysis-info {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .analysis-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #00a8cc 0%, #0088a8 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+        }
+
+        .analysis-details h2 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .analysis-details p {
+            color: #666;
+            margin: 0;
+        }
+
+        /* Booking Form */
+        .booking-form-wrapper {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-header i {
+            font-size: 48px;
+            color: #00a8cc;
+            margin-bottom: 15px;
+        }
+
+        .form-header h3 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 45px 15px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: var(--font-arabic);
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00a8cc;
+            box-shadow: 0 0 0 3px rgba(0, 168, 204, 0.1);
+        }
+
+        .form-group i {
+            position: absolute;
+            right: 15px;
+            top: 45px;
+            color: #999;
+            font-size: 18px;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #00a8cc 0%, #0088a8 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            font-family: var(--font-arabic);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 168, 204, 0.4);
+        }
+
+        /* Success Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 20px;
+        }
+
+        .modal-icon.success {
+            background: #d4edda;
+            color: #28a745;
+        }
+
+        .modal-content h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .modal-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .booking-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .booking-details p {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .booking-details strong {
+            color: #00a8cc;
+        }
+
+        .btn-close {
+            background: #00a8cc;
+            color: white;
+            padding: 12px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--font-arabic);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-close:hover {
+            background: #0088a8;
+        }
+
+        /* Alert */
+        .alert {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 3000;
+            animation: fadeInUp 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .alert-error {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .alert-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="booking-page">
+        <!-- Header -->
+        <div class="booking-header">
+            <div class="container">
+                <a href="analysis.html" class="logo">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>مركز الأفق الطبي</span>
+                </a>
+                <button class="back-btn" onclick="window.location.href='analysis.html'">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    العودة للتحليلات
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="booking-main">
+            <div class="container">
+                <!-- Analysis Info -->
+                <div class="analysis-info">
+                    <div class="analysis-icon" id="analysisIcon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <div class="analysis-details">
+                        <h2 id="analysisName">تحليل الدم</h2>
+                        <p id="analysisDesc">فحوصات طبية شاملة ودقيقة بأحدث التقنيات</p>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-form-wrapper">
+                    <form id="analysisBookingForm">
+                        <div class="form-header">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <h3>احجز موعد تحليل</h3>
+                            <p>املأ البيانات التالية لحجز موعدك</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientName">الاسم الكامل</label>
+                            <input type="text" id="patientName" name="patientName" placeholder="أدخل اسمك الكامل" required>
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientPhone">رقم الهاتف</label>
+                            <input type="tel" id="patientPhone" name="patientPhone" placeholder="05xxxxxxxx" required>
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingDate">تاريخ الحجز</label>
+                                <input type="date" id="bookingDate" name="bookingDate" required>
+                                <i class="fa-solid fa-calendar"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">وقت الحجز</label>
+                                <select id="bookingTime" name="bookingTime" required>
+                                    <option value="">اختر الوقت</option>
+                                    <option value="08:00">08:00 صباحاً</option>
+                                    <option value="09:00">09:00 صباحاً</option>
+                                    <option value="10:00">10:00 صباحاً</option>
+                                    <option value="11:00">11:00 صباحاً</option>
+                                    <option value="12:00">12:00 ظهراً</option>
+                                    <option value="14:00">02:00 مساءً</option>
+                                    <option value="15:00">03:00 مساءً</option>
+                                    <option value="16:00">04:00 مساءً</option>
+                                    <option value="17:00">05:00 مساءً</option>
+                                </select>
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">ملاحظات إضافية (اختياري)</label>
+                            <textarea id="notes" name="notes" placeholder="أي ملاحظات تريد إخبارنا بها..."></textarea>
+                            <i class="fa-solid fa-comment"></i>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-check"></i>
+                            تأكيد الحجز
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon success">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h3>تم حجز موعدك بنجاح!</h3>
+            <p>سيتم إرسال تأكيد على رقم الهاتف المسجل</p>
+            <div class="booking-details" id="bookingDetails"></div>
+            <button class="btn-close" onclick="window.location.href='index.html'">العودة للرئيسية</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Analysis data
+        const analysisData = {
+            'blood': {
+                name: 'تحليل الدم',
+                icon: 'fa-droplet',
+                desc: 'صورة دم كاملة (CBC) - سكر الدم التراكمي - وظائف الكلى - وظائف الكبد'
+            },
+            'urine': {
+                name: 'تحليل البول',
+                icon: 'fa-vial',
+                desc: 'تحليل البول الكامل - زراعة البول - Protein في البول - Glucose في البول'
+            },
+            'hormones': {
+                name: 'تحليل الهرمونات',
+                icon: 'fa-dna',
+                desc: 'هرمونات الغدة الدرقية - هرمونات الذكورة - هرمونات الأنوثة - هرمونات الحمل'
+            },
+            'vitamins': {
+                name: 'تحليل الفيتامينات',
+                icon: 'fa-pills',
+                desc: 'فيتامين D - vitamin B12 - الحديد وفيريتين - الزنك والماغنسيوم'
+            },
+            'allergy': {
+                name: 'تحليل الحساسية',
+                icon: 'fa-allergies',
+                desc: 'حساسية الطعام - حساسية التنفس - حساسية الجلد - حساسية الأدوية'
+            },
+            'genetic': {
+                name: 'التحليل الوراثي',
+                icon: 'fa-code-branch',
+                desc: 'فحص ما قبل الزواج - فحص حديثي الولادة - فحوصات السرطان - الفحص الشامل'
+            }
+        };
+
+        // Get analysis type from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const analysisType = urlParams.get('type') || 'blood';
+
+        // Set analysis info
+        const data = analysisData[analysisType] || analysisData['blood'];
+        document.getElementById('analysisName').textContent = data.name;
+        document.getElementById('analysisDesc').textContent = data.desc;
+        document.getElementById('analysisIcon').innerHTML = `<i class="fa-solid ${data.icon}"></i>`;
+
+        // Initialize date picker
+        const dateInput = document.getElementById('bookingDate');
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        dateInput.min = `${year}-${month}-${day}`;
+
+        const maxDate = new Date();
+        maxDate.setMonth(maxDate.getMonth() + 3);
+        dateInput.max = `${maxDate.getFullYear()}-${String(maxDate.getMonth() + 1).padStart(2, '0')}-${String(maxDate.getDate()).padStart(2, '0')}`;
+
+        // Form submission
+        document.getElementById('analysisBookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get('patientName'),
+                phone: formData.get('patientPhone'),
+                type: 'تحليل',
+                analysisType: analysisType,
+                analysisName: document.getElementById('analysisName').textContent,
+                date: formData.get('bookingDate'),
+                time: formData.get('bookingTime'),
+                notes: formData.get('notes'),
+                status: 'confirmed',
+                createdAt: new Date().toISOString()
+            };
+
+            // Validate
+            if (!data.name || !data.phone || !data.date || !data.time) {
+                showAlert('يرجى ملء جميع الحقول المطلوبة', 'error');
+                return;
+            }
+
+            // Validate phone
+            const phoneRegex = /^01[0-9]{9}$/;
+            if (!phoneRegex.test(data.phone)) {
+                showAlert('يرجى إدخال رقم هاتف صحيح', 'error');
+                return;
+            }
+
+            // Validate date
+            const selectedDate = new Date(data.date);
+            const todayDate = new Date();
+            todayDate.setHours(0, 0, 0, 0);
+
+            if (selectedDate < todayDate) {
+                showAlert('يرجى اختيار تاريخ مستقبلي', 'error');
+                return;
+            }
+
+            // Save booking
+            const bookings = JSON.parse(localStorage.getItem('medicalBookings') || '[]');
+            bookings.push(data);
+            localStorage.setItem('medicalBookings', JSON.stringify(bookings));
+
+            // Show success modal instead of redirecting to admin
+            showSuccessModal(data);
+
+            // Reset form
+            this.reset();
+        });
+
+        function showAlert(message, type) {
+            const alert = document.createElement('div');
+            alert.className = `alert alert-${type}`;
+            alert.innerHTML = `
+                <i class="fa-solid fa-${type === 'error' ? 'circle-exclamation' : 'circle-check'}"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(alert);
+
+            setTimeout(() => {
+                alert.style.animation = 'fadeInUp 0.3s ease reverse';
+                setTimeout(() => alert.remove(), 300);
+            }, 3000);
+        }
+
+        function showSuccessModal(data) {
+            const modal = document.getElementById('successModal');
+            const bookingDetails = document.getElementById('bookingDetails');
+
+            const date = new Date(data.date);
+            const formattedDate = date.toLocaleDateString('ar-SA', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            const time = data.time;
+            const hour = parseInt(time.split(':')[0]);
+            let formattedTime;
+            if (hour < 12) {
+                formattedTime = `${hour}:00 صباحاً`;
+            } else if (hour === 12) {
+                formattedTime = `${hour}:00 ظهراً`;
+            } else {
+                formattedTime = `${hour - 12}:00 مساءً`;
+            }
+
+            bookingDetails.innerHTML = `
+                <p><strong>الاسم:</strong> ${data.name}</p>
+                <p><strong>رقم الهاتف:</strong> ${data.phone}</p>
+                <p><strong>نوع التحليل:</strong> ${data.analysisName}</p>
+                <p><strong>التاريخ:</strong> ${formattedDate}</p>
+                <p><strong>الوقت:</strong> ${formattedTime}</p>
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    </script>
+</body>
+
+</html>

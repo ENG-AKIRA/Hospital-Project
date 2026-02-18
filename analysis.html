@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم التحليل | مركز الأفق الطبي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>مركز الأفق الطبي</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="analysis.html" class="active">قسم التحليل</a></li>
+                <li><a href="doctors.html">الأطباء</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="page-header">
+        <div class="header-image" style="background-image: url('https://images.unsplash.com/photo-1579154204601-01588f351e67?w=1920&q=80');"></div>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>قسم التحليل</span>
+            </div>
+            <h1>قسم التحليل الطبي</h1>
+            <p>فحوصات طبية شاملة ودقيقة بأحدث التقنيات</p>
+        </div>
+    </section>
+
+    <!-- Analysis Types -->
+    <section class="analysis-types">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">أنواع التحليلات</span>
+                <h2>اختر نوع التحليل المطلوب</h2>
+            </div>
+            <div class="analysis-grid">
+                <div class="analysis-card" data-type="blood">
+                    <div class="analysis-img">
+                        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=400&q=80" alt="تحليل الدم">
+                    </div>
+                    <div class="analysis-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3>تحليل الدم</h3>
+                    <ul>
+                        <li>صورة دم كاملة (CBC)</li>
+                        <li>سكر الدم التراكمي</li>
+                        <li>وظائف الكلى</li>
+                        <li>وظائف الكبد</li>
+                    </ul>
+                    <button class="btn-select" onclick="selectAnalysis('blood')">اختيار هذا التحليل</button>
+                </div>
+                <div class="analysis-card" data-type="urine">
+                    <div class="analysis-img">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&q=80" alt="تحليل البول">
+                    </div>
+                    <div class="analysis-icon">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+                    <h3>تحليل البول</h3>
+                    <ul>
+                        <li>تحليل البول الكامل</li>
+                        <li>زراعة البول</li>
+                        <li> protein في البول</li>
+                        <li> Glucose في البول</li>
+                    </ul>
+                    <button class="btn-select" onclick="selectAnalysis('urine')">اختيار هذا التحليل</button>
+                </div>
+                <div class="analysis-card" data-type="hormones">
+                    <div class="analysis-img">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80" alt="تحليل الهرمونات">
+                    </div>
+                    <div class="analysis-icon">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3>تحليل الهرمونات</h3>
+                    <ul>
+                        <li>هرمونات الغدة الدرقية</li>
+                        <li>هرمونات الذكورة</li>
+                        <li>هرمونات الأنوثة</li>
+                        <li>هرمونات الحمل</li>
+                    </ul>
+                    <button class="btn-select" onclick="selectAnalysis('hormones')">اختيار هذا التحليل</button>
+                </div>
+                <div class="analysis-card" data-type="vitamins">
+                    <div class="analysis-img">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&q=80" alt="تحليل الفيتامينات">
+                    </div>
+                    <div class="analysis-icon">
+                        <i class="fa-solid fa-pills"></i>
+                    </div>
+                    <h3>تحليل الفيتامينات</h3>
+                    <ul>
+                        <li>فيتامين D</li>
+                        <li>فيitamin B12</li>
+                        <li>الحديد وفيريتين</li>
+                        <li>الزنك والماغنسيوم</li>
+                    </ul>
+                    <button class="btn-select" onclick="selectAnalysis('vitamins')">اختيار هذا التحليل</button>
+                </div>
+                <div class="analysis-card" data-type="allergy">
+                    <div class="analysis-img">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&q=80" alt="تحليل الحساسية">
+                    </div>
+                    <div class="analysis-icon">
+                        <i class="fa-solid fa-allergies"></i>
+                    </div>
+                    <h3>تحليل الحساسية</h3>
+                    <ul>
+                        <li>حساسية الطعام</li>
+                        <li>حساسية التنفس</li>
+                        <li>حساسية الجلد</li>
+                        <li>حساسية الأدوية</li>
+                    </ul>
+                    <button class="btn-select" onclick="selectAnalysis('allergy')">اختيار هذا التحليل</button>
+                </div>
+                <div class="analysis-card" data-type="genetic">
+                    <div class="analysis-img">
+                        <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=400&q=80" alt="التحليل الوراثي">
+                    </div>
+                    <div class="analysis-icon">
+                        <i class="fa-solid fa-code-branch"></i>
+                    </div>
+                    <h3>التحليل الوراثي</h3>
+                    <ul>
+                        <li>فحص ما قبل الزواج</li>
+                        <li>فحص حديثي الولادة</li>
+                        <li>فحوصات السرطان</li>
+                        <li>الفحص الشامل</li>
+                    </ul>
+                    <button class="btn-select" onclick="selectAnalysis('genetic')">اختيار هذا التحليل</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <span class="section-subtitle">احجز موعدك الآن</span>
+                    <h2>احجز تحليل طبي</h2>
+                    <p>املأ البيانات التالية لحجز موعدك في قسم التحليل</p>
+                    <div class="booking-features">
+                        <div class="feature">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>نتائج سريعة خلال 24 ساعة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-user-md"></i>
+                            <span>فريق متخصص من الخبراء</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>دقة عالية في النتائج</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-file-medical"></i>
+                            <span>تقارير مفصلة باللغة العربية</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-form-container">
+                    <form id="analysisBookingForm" class="booking-form">
+                        <div class="form-header">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            <h3>حجز موعد تحليل</h3>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientName">الاسم الكامل</label>
+                            <input type="text" id="patientName" name="patientName" placeholder="أدخل اسمك الكامل" required>
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientPhone">رقم الهاتف</label>
+                            <input type="tel" id="patientPhone" name="patientPhone" placeholder="05xxxxxxxx" required>
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="patientAge">العمر</label>
+                            <input type="number" id="patientAge" name="patientAge" placeholder="أدخل عمرك" min="1" max="150" required>
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingDate">تاريخ الحجز</label>
+                                <input type="date" id="bookingDate" name="bookingDate" required>
+                                <i class="fa-solid fa-calendar"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">وقت الحجز</label>
+                                <select id="bookingTime" name="bookingTime" required>
+                                    <option value="">اختر الوقت</option>
+                                    <option value="08:00">08:00 صباحاً</option>
+                                    <option value="09:00">09:00 صباحاً</option>
+                                    <option value="10:00">10:00 صباحاً</option>
+                                    <option value="11:00">11:00 صباحاً</option>
+                                    <option value="12:00">12:00 ظهراً</option>
+                                    <option value="14:00">02:00 مساءً</option>
+                                    <option value="15:00">03:00 مساءً</option>
+                                    <option value="16:00">04:00 مساءً</option>
+                                    <option value="17:00">05:00 مساءً</option>
+                                </select>
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">ملاحظات إضافية (اختياري)</label>
+                            <textarea id="notes" name="notes" placeholder="أي ملاحظات تريد إخبارنا بها..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-check"></i>
+                            تأكيد الحجز
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon success">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h3>تم حجز موعدك بنجاح!</h3>
+            <p>سيتم إرسال تأكيد على رقم الهاتف المسجل</p>
+            <div class="booking-details" id="bookingDetails"></div>
+            <button class="btn-close" onclick="closeModal()">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>مركز الأفق الطبي</span>
+                </div>
+                <p>شريكك في الرعاية الصحية</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 مركز الأفق الطبي. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

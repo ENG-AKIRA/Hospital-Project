@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأطباء | مركز الأفق الطبي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>مركز الأفق الطبي</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="analysis.html">قسم التحليل</a></li>
+                <li><a href="doctors.html" class="active">الأطباء</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="page-header doctors-header">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <div class="breadcrumb">
+                <a href="index.html">الرئيسية</a>
+                <i class="fa-solid fa-chevron-left"></i>
+                <span>الأطباء</span>
+            </div>
+            <h1>أطباؤنا المتخصصون</h1>
+            <p>فريق من أمهر الأطباء في مختلف التخصصات الطبية</p>
+        </div>
+    </section>
+
+    <!-- Specialty Filter -->
+    <section class="specialty-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-specialty="all">الكل</button>
+                <button class="filter-btn" data-specialty="general">الباطنة</button>
+                <button class="filter-btn" data-specialty="cardiology">القلب</button>
+                <button class="filter-btn" data-specialty="dermatology">الجلدية</button>
+                <button class="filter-btn" data-specialty="orthopedics">العظام</button>
+                <button class="filter-btn" data-specialty="pediatrics">الأطفال</button>
+                <button class="filter-btn" data-specialty="neurology">الأعصاب</button>
+                <button class="filter-btn" data-specialty="gynecology">النساء والولادة</button>
+                <button class="filter-btn" data-specialty="ophthalmology">العيون</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Grid -->
+    <section class="doctors-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">فريقنا الطبي</span>
+                <h2>تعرف على أطبائنا</h2>
+            </div>
+            <div class="doctors-grid">
+                <div class="doctor-card" data-specialty="cardiology">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80" alt="د. محمد أحمد">
+                        <div class="doctor-status available"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <span class="specialty">أمراض القلب</span>
+                        <h3>د. محمد أحمد</h3>
+                        <p class="doctor-title">استشاري أمراض القلب التداخلية</p>
+                        <div class="doctor-details">
+                            <div class="detail">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>جامعة الملك سعود</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>15 سنة خبرة</span>
+                            </div>
+                        </div>
+                        <div class="doctor-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>4.8 </div>
+                        <button class="</span>
+                       btn-book-doctor" data-doctor="د. محمد أحمد - أمراض القلب">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="dermatology">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&q=80" alt="د. سارة خالد">
+                        <div class="doctor-status available"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <span class="specialty">الجلدية</span>
+                        <h3>د. سارة خالد</h3>
+                        <p class="doctor-title">استشارية الجلدية والتجميل</p>
+                        <div class="doctor-details">
+                            <div class="detail">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>جامعة القاهرة</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>12 سنة خبرة</span>
+                            </div>
+                        </div>
+                        <div class="doctor-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <button class="btn-book-doctor" data-doctor="د. سارة خالد - الجلدية">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="general">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&q=80" alt="د. أحمد إبراهيم">
+                        <div class="doctor-status available"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <span class="specialty">الباطنة العامة</span>
+                        <h3>د. أحمد Ibrahim</h3>
+                        <p class="doctor-title">استشاري الباطنة والجهاز الهضمي</p>
+                        <div class="doctor-details">
+                            <div class="detail">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>جامعة عين شمس</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>18 سنة خبرة</span>
+                            </div>
+                        </div>
+                        <div class="doctor-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                        <button class="btn-book-doctor" data-doctor="د. أحمد إبراهيم - الباطنة">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="orthopedics">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=300&q=80" alt="د. خالد عمر">
+                        <div class="doctor-status available"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <span class="specialty">العظام</span>
+                        <h3>د. خالد عمر</h3>
+                        <p class="doctor-title">استشاري جراحة العظام والمفاصل</p>
+                        <div class="doctor-details">
+                            <div class="detail">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>جامعة هارفارد</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>20 سنة خبرة</span>
+                            </div>
+                        </div>
+                        <div class="doctor-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>4.7</span>
+                        </div>
+                        <button class="btn-book-doctor" data-doctor="د. خالد عمر - العظام">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="pediatrics">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&q=80" alt="د. نورة عبد الله">
+                        <div class="doctor-status available"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <span class="specialty">طب الأطفال</span>
+                        <h3>د. نورة Abdullah</h3>
+                        <p class="doctor-title">استشارية طب الأطفال وحديثي الولادة</p>
+                        <div class="doctor-details">
+                            <div class="detail">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>جامعة الملك فيصل</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>14 سنة خبرة</span>
+                            </div>
+                        </div>
+                        <div class="doctor-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                        <button class="btn-book-doctor" data-doctor="د. نورة عبد الله - الأطفال">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="neurology">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&q=80" alt="د. عمر حسني">
+                        <div class="doctor-status available"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <span class="specialty">الأعصاب</span>
+                        <h3>د. عمر Hussein</h3>
+                        <p class="doctor-title">استشاري الأمراض العصبية</p>
+                        <div class="doctor-details">
+                            <div class="detail">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>جامعة Johns Hopkins</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>16 سنة خبرة</span>
+                            </div>
+                        </div>
+                        <div class="doctor-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                            <span>4.6</span>
+                        </div>
+                        <button class="btn-book-doctor" data-doctor="د. عمر حسني - الأعصاب">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="gynecology">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=300&q=80" alt="د. ليلى أحمد">
+                        <div class="doctor-status available"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <span class="specialty">النساء والولادة</span>
+                        <h3>د. ليلى أحمد</h3>
+                        <p class="doctor-title">استشارية النساء والولادة</p>
+                        <div class="doctor-details">
+                            <div class="detail">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>جامعة لندن</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>17 سنة خبرة</span>
+                            </div>
+                        </div>
+                        <div class="doctor-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                        <button class="btn-book-doctor" data-doctor="د. ليلى أحمد - النساء والولادة">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+
+                <div class="doctor-card" data-specialty="ophthalmology">
+                    <div class="doctor-image">
+                        <img src="https://images.unsplash.com/photo-1618498082410-b4aa22193b38?w=300&q=80" alt="د. فارس خالد">
+                        <div class="doctor-status available"></div>
+                    </div>
+                    <div class="doctor-info">
+                        <span class="specialty">العيون</span>
+                        <h3>د. فارس Khalid</h3>
+                        <p class="doctor-title">استشاري طب وجراحة العيون</p>
+                        <div class="doctor-details">
+                            <div class="detail">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>جامعة الملك سعود</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-briefcase"></i>
+                                <span>13 سنة خبرة</span>
+                            </div>
+                        </div>
+                        <div class="doctor-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                        <button class="btn-book-doctor" data-doctor="د. فارس خالد - العيون">
+                            <i class="fa-solid fa-calendar-check"></i>
+                            حجز موعد
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="booking-wrapper">
+                <div class="booking-info">
+                    <span class="section-subtitle">احجز موعدك الآن</span>
+                    <h2>احجز موعد طبيب</h2>
+                    <p>املأ البيانات التالية لحجز موعدك مع الطبيب</p>
+                    <div class="booking-features">
+                        <div class="feature">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>انتظار قصير للموعد</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-user-md"></i>
+                            <span>أطباء ذوو خبرة عالية</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                            <span>رعاية شاملة ومتكاملة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fa-solid fa-comment-medical"></i>
+                            <span>استشارات متخصصة</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-form-container">
+                    <form id="doctorBookingForm" class="booking-form">
+                        <div class="form-header">
+                            <i class="fa-solid fa-user-md"></i>
+                            <h3>حجز موعد طبيب</h3>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="patientName">الاسم الكامل</label>
+                            <input type="text" id="patientName" name="patientName" placeholder="أدخل اسمك الكامل" required>
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="patientPhone">رقم الهاتف</label>
+                            <input type="tel" id="patientPhone" name="patientPhone" placeholder="05xxxxxxxx" required>
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="doctorSelect">اختر الطبيب</label>
+                            <select id="doctorSelect" name="doctorSelect" required>
+                                <option value="">اختر الطبيب</option>
+                                <option value="د. محمد أحمد - أمراض القلب">د. محمد أحمد - أمراض القلب</option>
+                                <option value="د. سارة خالد - الجلدية">د. سارة خالد - الجلدية</option>
+                                <option value="د. أحمد إبراهيم - الباطنة">د. أحمد إبراهيم - الباطنة</option>
+                                <option value="د. خالد عمر - العظام">د. خالد عمر - العظام</option>
+                                <option value="د. نورة عبد الله - الأطفال">د. نورة عبد الله - الأطفال</option>
+                                <option value="د. عمر حسني - الأعصاب">د. عمر حسني - الأعصاب</option>
+                                <option value="د. ليلى أحمد - النساء والولادة">د. ليلى أحمد - النساء والولادة</option>
+                                <option value="د. فارس خالد - العيون">د. فارس خالد - العيون</option>
+                            </select>
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingDate">تاريخ الحجز</label>
+                                <input type="date" id="bookingDate" name="bookingDate" required>
+                                <i class="fa-solid fa-calendar"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">وقت الحجز</label>
+                                <select id="bookingTime" name="bookingTime" required>
+                                    <option value="">اختر الوقت</option>
+                                    <option value="08:00">08:00 صباحاً</option>
+                                    <option value="09:00">09:00 صباحاً</option>
+                                    <option value="10:00">10:00 صباحاً</option>
+                                    <option value="11:00">11:00 صباحاً</option>
+                                    <option value="12:00">12:00 ظهراً</option>
+                                    <option value="14:00">02:00 مساءً</option>
+                                    <option value="15:00">03:00 مساءً</option>
+                                    <option value="16:00">04:00 مساءً</option>
+                                    <option value="17:00">05:00 مساءً</option>
+                                </select>
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="symptoms">الأعراض/السبب (اختياري)</label>
+                            <textarea id="symptoms" name="symptoms" placeholder="صف الأعراض أو سبب الزيارة..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-check"></i>
+                            تأكيد الحجز
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon success">
+                <i class="fa-solid fa-check-circle"></i>
+            </div>
+            <h3>تم حجز موعدك بنجاح!</h3>
+            <p>سيتم إرسال تأكيد على رقم الهاتف المسجل</p>
+            <div class="booking-details" id="bookingDetails"></div>
+            <button class="btn-close" onclick="closeModal()">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>مركز الأفق الطبي</span>
+                </div>
+                <p>شريكك في الرعاية الصحية</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 مركز الأفق الطبي. جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
